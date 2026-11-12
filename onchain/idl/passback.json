@@ -1,0 +1,1768 @@
+{
+  "address": "C9NtyYCuGLZTPr6H9wLE2hhTsfZPmVdfiNucQxy2u3JB",
+  "metadata": {
+    "name": "passback",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "claim",
+      "discriminator": [
+        62,
+        198,
+        214,
+        193,
+        213,
+        159,
+        108,
+        210
+      ],
+      "accounts": [
+        {
+          "name": "wallet",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "days",
+          "type": {
+            "vec": "u64"
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim_referral",
+      "discriminator": [
+        219,
+        247,
+        18,
+        148,
+        63,
+        247,
+        112,
+        198
+      ],
+      "accounts": [
+        {
+          "name": "wallet",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "referrer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  102,
+                  101,
+                  114,
+                  114,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "wallet"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_project_day",
+      "discriminator": [
+        249,
+        232,
+        45,
+        117,
+        153,
+        1,
+        237,
+        92
+      ],
+      "accounts": [
+        {
+          "name": "wallet",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "project_day",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  106,
+                  101,
+                  99,
+                  116,
+                  95,
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "project"
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "day",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "program",
+          "address": "C9NtyYCuGLZTPr6H9wLE2hhTsfZPmVdfiNucQxy2u3JB"
+        },
+        {
+          "name": "program_data"
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "treasury"
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "settings",
+          "type": {
+            "defined": {
+              "name": "ConfigSettings"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pay",
+      "discriminator": [
+        119,
+        18,
+        216,
+        65,
+        192,
+        117,
+        122,
+        220
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "project",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  106,
+                  101,
+                  99,
+                  116
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "identity_hash"
+              }
+            ]
+          }
+        },
+        {
+          "name": "board",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        },
+        {
+          "name": "project_day",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  106,
+                  101,
+                  99,
+                  116,
+                  95,
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "project"
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        },
+        {
+          "name": "referrer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  102,
+                  101,
+                  114,
+                  114,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "referrer_wallet"
+              }
+            ]
+          }
+        },
+        {
+          "name": "payer_token",
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "instructions",
+          "address": "Sysvar1nstructions1111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "identity_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        },
+        {
+          "name": "day",
+          "type": "u64"
+        },
+        {
+          "name": "new_day_amount",
+          "type": "u64"
+        },
+        {
+          "name": "referrer_wallet",
+          "type": "pubkey"
+        },
+        {
+          "name": "creation",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "Creation"
+              }
+            }
+          }
+        },
+        {
+          "name": "expected_charge",
+          "type": "u64"
+        },
+        {
+          "name": "expected_payout_wallet",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "refill_top",
+      "discriminator": [
+        116,
+        111,
+        49,
+        81,
+        163,
+        218,
+        141,
+        14
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "project_day",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  106,
+                  101,
+                  99,
+                  116,
+                  95,
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "project"
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        },
+        {
+          "name": "board",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "day",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "set_category",
+      "discriminator": [
+        127,
+        124,
+        45,
+        215,
+        10,
+        165,
+        237,
+        243
+      ],
+      "accounts": [
+        {
+          "name": "actor",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "project",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "category_id",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "set_paused",
+      "discriminator": [
+        91,
+        60,
+        125,
+        192,
+        176,
+        225,
+        166,
+        218
+      ],
+      "accounts": [
+        {
+          "name": "actor",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "paused",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "set_payout_wallet",
+      "discriminator": [
+        176,
+        232,
+        79,
+        49,
+        104,
+        143,
+        62,
+        49
+      ],
+      "accounts": [
+        {
+          "name": "actor",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "project",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "payout_wallet",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "set_project_status",
+      "discriminator": [
+        38,
+        83,
+        100,
+        228,
+        9,
+        227,
+        83,
+        170
+      ],
+      "accounts": [
+        {
+          "name": "actor",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "project",
+          "writable": true
+        },
+        {
+          "name": "board",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  97,
+                  121
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "day"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "day",
+          "type": "u64"
+        },
+        {
+          "name": "blocked",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "update_config",
+      "discriminator": [
+        29,
+        158,
+        252,
+        191,
+        10,
+        83,
+        219,
+        99
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "treasury"
+        }
+      ],
+      "args": [
+        {
+          "name": "settings",
+          "type": {
+            "defined": {
+              "name": "ConfigSettings"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Config",
+      "discriminator": [
+        155,
+        12,
+        170,
+        224,
+        30,
+        250,
+        204,
+        130
+      ]
+    },
+    {
+      "name": "DayBoard",
+      "discriminator": [
+        205,
+        206,
+        57,
+        14,
+        0,
+        251,
+        3,
+        135
+      ]
+    },
+    {
+      "name": "Project",
+      "discriminator": [
+        205,
+        168,
+        189,
+        202,
+        181,
+        247,
+        142,
+        19
+      ]
+    },
+    {
+      "name": "ProjectDay",
+      "discriminator": [
+        11,
+        61,
+        177,
+        98,
+        24,
+        213,
+        248,
+        123
+      ]
+    },
+    {
+      "name": "Referrer",
+      "discriminator": [
+        99,
+        150,
+        214,
+        66,
+        111,
+        120,
+        49,
+        126
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "CategoryChanged",
+      "discriminator": [
+        46,
+        15,
+        104,
+        148,
+        239,
+        211,
+        75,
+        71
+      ]
+    },
+    {
+      "name": "Claimed",
+      "discriminator": [
+        217,
+        192,
+        123,
+        72,
+        108,
+        150,
+        248,
+        33
+      ]
+    },
+    {
+      "name": "ConfigUpdated",
+      "discriminator": [
+        40,
+        241,
+        230,
+        122,
+        11,
+        19,
+        198,
+        194
+      ]
+    },
+    {
+      "name": "Paid",
+      "discriminator": [
+        240,
+        193,
+        17,
+        238,
+        238,
+        210,
+        129,
+        235
+      ]
+    },
+    {
+      "name": "PassbackCredited",
+      "discriminator": [
+        107,
+        58,
+        222,
+        56,
+        43,
+        234,
+        102,
+        97
+      ]
+    },
+    {
+      "name": "PausedChanged",
+      "discriminator": [
+        12,
+        10,
+        153,
+        247,
+        60,
+        115,
+        137,
+        69
+      ]
+    },
+    {
+      "name": "PayoutWalletChanged",
+      "discriminator": [
+        128,
+        67,
+        16,
+        134,
+        127,
+        37,
+        48,
+        207
+      ]
+    },
+    {
+      "name": "ProjectDayClosed",
+      "discriminator": [
+        32,
+        183,
+        133,
+        220,
+        170,
+        55,
+        156,
+        54
+      ]
+    },
+    {
+      "name": "ProjectStatusChanged",
+      "discriminator": [
+        61,
+        114,
+        220,
+        188,
+        124,
+        178,
+        129,
+        228
+      ]
+    },
+    {
+      "name": "ReferralClaimed",
+      "discriminator": [
+        195,
+        109,
+        77,
+        196,
+        134,
+        226,
+        78,
+        108
+      ]
+    },
+    {
+      "name": "TopRefilled",
+      "discriminator": [
+        69,
+        46,
+        204,
+        205,
+        51,
+        57,
+        143,
+        41
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Overflow",
+      "msg": "Arithmetic overflow"
+    },
+    {
+      "code": 6001,
+      "name": "Paused",
+      "msg": "Payments are paused"
+    },
+    {
+      "code": 6002,
+      "name": "Blocked",
+      "msg": "Project is blocked"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidAmount",
+      "msg": "Whole-dollar payment is outside the permitted range"
+    },
+    {
+      "code": 6004,
+      "name": "TopJumpTooSmall",
+      "msg": "Taking first place requires a five-dollar lead"
+    },
+    {
+      "code": 6005,
+      "name": "StaleBoard",
+      "msg": "The board changed; fetch a fresh quote and sign again"
+    },
+    {
+      "code": 6006,
+      "name": "WrongDay",
+      "msg": "The validator day changed; fetch a fresh quote"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidIdentity",
+      "msg": "Invalid project identity"
+    },
+    {
+      "code": 6008,
+      "name": "AdmissionRequired",
+      "msg": "Valid admission signature required"
+    },
+    {
+      "code": 6009,
+      "name": "AdmissionExpired",
+      "msg": "Admission expired"
+    },
+    {
+      "code": 6010,
+      "name": "WrongReferrer",
+      "msg": "Incorrect referrer"
+    },
+    {
+      "code": 6011,
+      "name": "WrongAccount",
+      "msg": "Incorrect account"
+    },
+    {
+      "code": 6012,
+      "name": "WrongMint",
+      "msg": "Incorrect USDC mint"
+    },
+    {
+      "code": 6013,
+      "name": "Unauthorized",
+      "msg": "Unauthorized signer"
+    },
+    {
+      "code": 6014,
+      "name": "AlreadyRanked",
+      "msg": "Project already appears on this board"
+    },
+    {
+      "code": 6015,
+      "name": "DoesNotQualify",
+      "msg": "Project does not qualify for the top ten"
+    },
+    {
+      "code": 6016,
+      "name": "DuplicateDay",
+      "msg": "Duplicate claim day"
+    },
+    {
+      "code": 6017,
+      "name": "DayNotEnded",
+      "msg": "The day has not ended"
+    },
+    {
+      "code": 6018,
+      "name": "UnclaimedFunds",
+      "msg": "Claim the remaining balance before closing"
+    },
+    {
+      "code": 6019,
+      "name": "StaleQuote",
+      "msg": "The payment amount changed; review a fresh quote and sign again"
+    },
+    {
+      "code": 6020,
+      "name": "PayoutWalletChanged",
+      "msg": "The payout wallet changed; review the recipient and sign again"
+    },
+    {
+      "code": 6021,
+      "name": "InvalidCategory",
+      "msg": "Category id is outside 1-255"
+    }
+  ],
+  "types": [
+    {
+      "name": "CategoryChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "project_state",
+            "type": {
+              "defined": {
+                "name": "Project"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Claimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "payout_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "project_day_state",
+            "type": {
+              "defined": {
+                "name": "ProjectDay"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "moderator",
+            "type": "pubkey"
+          },
+          {
+            "name": "admission_signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "usdc_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "passback_bps",
+            "type": "u16"
+          },
+          {
+            "name": "referral_bps",
+            "type": "u16"
+          },
+          {
+            "name": "min_first_amount",
+            "type": "u64"
+          },
+          {
+            "name": "min_amount",
+            "type": "u64"
+          },
+          {
+            "name": "max_amount",
+            "type": "u64"
+          },
+          {
+            "name": "top_jump",
+            "type": "u64"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "seq",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConfigSettings",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "moderator",
+            "type": "pubkey"
+          },
+          {
+            "name": "admission_signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConfigUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "config_state",
+            "type": {
+              "defined": {
+                "name": "Config"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Creation",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "identity_key",
+            "type": "string"
+          },
+          {
+            "name": "category_id",
+            "type": "u16"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DayBoard",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "day",
+            "type": "u64"
+          },
+          {
+            "name": "top",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "TopEntry"
+                }
+              }
+            }
+          },
+          {
+            "name": "volume",
+            "type": "u64"
+          },
+          {
+            "name": "payments",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paid",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "payer",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "treasury_amount",
+            "type": "u64"
+          },
+          {
+            "name": "referral_amount",
+            "type": "u64"
+          },
+          {
+            "name": "passback_amount",
+            "type": "u64"
+          },
+          {
+            "name": "project_state",
+            "type": {
+              "defined": {
+                "name": "Project"
+              }
+            }
+          },
+          {
+            "name": "project_day_state",
+            "type": {
+              "defined": {
+                "name": "ProjectDay"
+              }
+            }
+          },
+          {
+            "name": "referrer_state",
+            "type": {
+              "defined": {
+                "name": "Referrer"
+              }
+            }
+          },
+          {
+            "name": "board_state",
+            "type": {
+              "defined": {
+                "name": "DayBoard"
+              }
+            }
+          },
+          {
+            "name": "config_state",
+            "type": {
+              "defined": {
+                "name": "Config"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PassbackCredited",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "project_day_state",
+            "type": {
+              "defined": {
+                "name": "ProjectDay"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PausedChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "config_state",
+            "type": {
+              "defined": {
+                "name": "Config"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PayoutWalletChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "project_state",
+            "type": {
+              "defined": {
+                "name": "Project"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Project",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "identity_key",
+            "type": "string"
+          },
+          {
+            "name": "identity_hash",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "category_id",
+            "type": "u16"
+          },
+          {
+            "name": "payout_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "referrer",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "creator",
+            "type": "pubkey"
+          },
+          {
+            "name": "all_time_amount",
+            "type": "u64"
+          },
+          {
+            "name": "reached_seq",
+            "type": "u64"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "blocked",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProjectDay",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "day",
+            "type": "u64"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "passback_accrued",
+            "type": "u64"
+          },
+          {
+            "name": "passback_claimed",
+            "type": "u64"
+          },
+          {
+            "name": "reached_seq",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "docs": [
+              "Canonical PDA bump, stored at creation so later reads verify the address with one",
+              "`create_program_address` instead of a bump search whose cost the identity's owner can grind."
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProjectDayClosed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "day",
+            "type": "u64"
+          },
+          {
+            "name": "payout_wallet",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProjectStatusChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "project_state",
+            "type": {
+              "defined": {
+                "name": "Project"
+              }
+            }
+          },
+          {
+            "name": "board_state",
+            "type": {
+              "defined": {
+                "name": "DayBoard"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReferralClaimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "referrer_state",
+            "type": {
+              "defined": {
+                "name": "Referrer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Referrer",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "accrued",
+            "type": "u64"
+          },
+          {
+            "name": "claimed",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TopEntry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "reached_seq",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TopRefilled",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "board_state",
+            "type": {
+              "defined": {
+                "name": "DayBoard"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

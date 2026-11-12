@@ -1,0 +1,23 @@
+[toolchain]
+anchor_version = "0.32.1"
+solana_version = "4.3.0"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+passback = "DdnqUQ4LgL9iBy2rgfVTd5XYinDY1hJoc6oiXWqWcLFi"
+
+[programs.devnet]
+passback = "DdnqUQ4LgL9iBy2rgfVTd5XYinDY1hJoc6oiXWqWcLFi"
+
+[programs.mainnet]
+passback = "C9NtyYCuGLZTPr6H9wLE2hhTsfZPmVdfiNucQxy2u3JB"
+
+[provider]
+cluster = "Localnet"
+wallet = "/tmp/passback-localnet-wallet.json"
+
+[scripts]
+test = "pnpm exec vitest run --config onchain/vitest.config.ts"
